@@ -3,4 +3,5 @@ RaspberryPi automation for a greenhouse cabinet with an [AHT20 temperature/humid
 
 ## Set Up
 * Install CircuitPython/Blinka [link](https://learn.adafruit.com/circuitpython-on-raspberrypi-linux/installing-circuitpython-on-raspberry-pi#update-your-pi-and-python-2993452)
-* Install AHT20 library [link](https://learn.adafruit.com/adafruit-aht20/python-circuitpython#python-installation-of-aht20-library-3064497)
+* Install this python module
+* Connect the humidity sensor to the I2C pins and the IOT relay to a GPIO (pin 17 by default)
