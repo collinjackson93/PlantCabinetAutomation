@@ -6,7 +6,7 @@ def c_to_f(c: Number) -> Number:
     return c * 1.8 + 32
 
 class Sensor:
-    def __init__() -> None:
+    def __init__(self) -> None:
         self._sensor = adafruit_ahtx0.AHTx0(board.I2C())
 
     @property
