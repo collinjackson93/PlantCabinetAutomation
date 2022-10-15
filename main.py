@@ -24,9 +24,9 @@ def main() -> int:
 
         # Schedule sensor readings
         check_humidity = lambda : humidity.set(sensor.humidity)
-        schedule.every(5).minutes.do(check_humidity)
+        schedule.every().minute.do(check_humidity)
         check_temp = lambda : temp.set(sensor.temperature)
-        schedule.every(5).minutes.do(check_temp)
+        schedule.every().minute.do(check_temp)
 
         # Take initial readings
         check_humidity()
