@@ -2,7 +2,7 @@ import sys
 from datetime import datetime, time
 from time import sleep
 import schedule
-from prometheus_client import start_http_server, Gauge
+from prometheus_client import start_http_server, Gauge, Enum
 from src.outlet import Outlet
 from src.sensor import Sensor
 
@@ -21,16 +21,20 @@ def main() -> int:
         start_http_server(9100) # port defined by Grafana agent config
         humidity = Gauge('cabinet_humidity', 'Relative humidity')
         temp = Gauge('cabinet_temp_fahrenheit', 'Temperature in F')
+        light = Enum('cabinet_light_on', 'If light is on', states=['on', 'off'])
 
         # Schedule sensor readings
         check_humidity = lambda : humidity.set(sensor.humidity)
         schedule.every().minute.do(check_humidity)
         check_temp = lambda : temp.set(sensor.temperature)
         schedule.every().minute.do(check_temp)
+        check_light = lambda : light.state('on' if outlet.is_on else 'off')
+        schedule.every().minute.do(check_light)
 
         # Take initial readings
         check_humidity()
         check_temp()
+        check_light()
 
         # Schedule lights
         schedule.every().day.at(ON_TIME.isoformat()).do(outlet.turn_on)
