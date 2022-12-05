@@ -7,3 +7,5 @@ RaspberryPi automation for a greenhouse cabinet with an [AHT20 temperature/humid
 * Connect the humidity sensor to the I2C pins and the IOT relay to a GPIO (pin 17 by default)
 * Install Grafana agent [link](https://grafana.com/docs/agent/latest/set-up/install-agent-linux/)
 * Create Hosted Prometheus API key and configuration in Grafana cloud
+* Install nginx
+* Configure nginx for flask server [link](https://flask.palletsprojects.com/en/2.2.x/deploying/nginx/)

@@ -23,3 +23,9 @@ class Outlet:
 
     def turn_off(self) -> None:
         self._outlet.value = False
+
+    def toggle(self) -> None:
+        if self.is_on:
+            self.turn_off()
+        else:
+            self.turn_on()

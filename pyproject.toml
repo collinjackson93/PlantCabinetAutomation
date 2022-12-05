@@ -10,5 +10,6 @@ requires-python = ">=3.7"
 dependencies = [
             "adafruit-circuitpython-ahtx0",
             "schedule",
-            "prometheus-client"
+            "prometheus-client",
+            "flask"
 ]

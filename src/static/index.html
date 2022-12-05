@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Plant Cabinet Control</title>
+<head>
+    <style>
+     .center {
+         margin: 0;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         -ms-transform: translate(-50%, -50%);
+         transform: translate(-50%, -50%);
+     }
+
+     .button {
+         font-size: 10vw;
+         border-radius: 8px;
+     }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <form action="/toggle/" method="post">
+            <button class="button" type="submit">Toggle lights</button>
+        </form>
+    </div>
+</body>
