@@ -1,0 +1,18 @@
+logging {
+  level = "warn"
+}
+
+prometheus.remote_write "mimir" {
+  endpoint {
+    url = "http://grafana.lan:9009/api/v1/push"
+  }
+}
+
+prometheus.scrape "default" {
+  targets = [
+    {
+      __address__ = "localhost:9100"
+    }
+  ]
+  forward_to = [prometheus.remote_write.mimir.receiver]
+}

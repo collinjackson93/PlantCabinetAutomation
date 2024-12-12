@@ -25,7 +25,7 @@ def main() -> int:
             outlet.turn_on()
 
         sensor = Sensor()
-        start_http_server(9100) # port defined by Grafana agent config
+        start_http_server(9100) # port defined by Grafana Alloy config
         humidity = Gauge('cabinet_humidity', 'Relative humidity')
         temp = Gauge('cabinet_temp_fahrenheit', 'Temperature in F')
         light = Enum('cabinet_light_on', 'If light is on', states=['on', 'off'])
