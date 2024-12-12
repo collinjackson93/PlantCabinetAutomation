@@ -1,7 +1,7 @@
 [Unit]
 After=network-online.target
 [Service]
-ExecStart=~/env/bin/python ~/PlantCabinetAutomation/main.py
+ExecStart=/home/collin/env/bin/python /home/collin/PlantCabinetAutomation/main.py
 Restart=always
 User=collin
 [Install]
