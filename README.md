@@ -1,4 +1,7 @@
 # PlantCabinetAutomation
+
+Migrated to Codeberg: https://codeberg.org/collin93/PlantCabinetAutomation
+
 RaspberryPi automation for a greenhouse cabinet with an [AHT20 temperature/humidity sensor](https://www.adafruit.com/product/5181) and growing lights controlled via an [IOT relay](https://www.adafruit.com/product/2935)
 
 ## Set Up
